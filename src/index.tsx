@@ -17,6 +17,15 @@ const Bitlabs = NativeModules.Bitlabs
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return Bitlabs.multiply(a, b);
+function show(): void {
+  return Bitlabs.show();
 }
+function hasSurveys(): Promise<boolean> {
+  return Bitlabs.hasSurveys();
+}
+
+function init(token: string, userId: string): Promise<boolean> {
+  return Bitlabs.initBitLabsSDK(token, userId);
+}
+
+export default { show, hasSurveys, init };

@@ -1,5 +1,7 @@
 package com.reactnativebitlabs;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 
 import com.facebook.react.bridge.Promise;
@@ -7,6 +9,9 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.module.annotations.ReactModule;
+
+import ai.bitlabs.sdk.BitLabsSDK;
+
 
 @ReactModule(name = BitlabsModule.NAME)
 public class BitlabsModule extends ReactContextBaseJavaModule {
@@ -22,13 +27,20 @@ public class BitlabsModule extends ReactContextBaseJavaModule {
         return NAME;
     }
 
-
-    // Example method
-    // See https://reactnative.dev/docs/native-modules-android
     @ReactMethod
-    public void multiply(int a, int b, Promise promise) {
-        promise.resolve(a * b);
+    public void initBitLabsSDK(String token, String userId){
+      Context context = getReactApplicationContext();
+      BitLabsSDK.Companion.init(context, token, userId);
     }
 
-    public static native int nativeMultiply(int a, int b);
+    @ReactMethod
+    public void show(){
+      Context context = getReactApplicationContext();
+      BitLabsSDK.Companion.show(context);
+    }
+
+    @ReactMethod
+    public void hasSurveys(Promise promise){
+      BitLabsSDK.Companion.hasSurveys(promise::resolve, promise::reject);
+    }
 }
