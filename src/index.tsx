@@ -24,8 +24,12 @@ function hasSurveys(): Promise<boolean> {
   return Bitlabs.hasSurveys();
 }
 
-function init(token: string, userId: string): Promise<boolean> {
-  return Bitlabs.initBitLabsSDK(token, userId);
+function init(
+  token: string,
+  userId: string,
+  playerId: string
+): Promise<boolean> {
+  return Bitlabs.initBitLabsSDK(token, userId, playerId);
 }
 
 export default { show, hasSurveys, init };

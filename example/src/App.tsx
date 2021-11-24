@@ -9,9 +9,9 @@ export default function App() {
       <Button title="Start Bitlabs" onPress={() => bitlabs.show()} />
 
       <Button
-        title="hasSurveys"
+        title="Init"
         onPress={() => {
-          bitlabs.init('', '');
+          bitlabs.init('', '', '');
           bitlabs
             .hasSurveys()
             .then((value) => {

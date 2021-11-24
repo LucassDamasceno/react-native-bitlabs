@@ -10,6 +10,9 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.module.annotations.ReactModule;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import ai.bitlabs.sdk.BitLabsSDK;
 
 
@@ -28,9 +31,12 @@ public class BitlabsModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void initBitLabsSDK(String token, String userId){
+    public void initBitLabsSDK(String token, String userId, String playerId){
       Context context = getReactApplicationContext();
       BitLabsSDK.Companion.init(context, token, userId);
+      Map<String, Object> tags = new HashMap<>();
+      tags.put("playerId", playerId);
+      BitLabsSDK.Companion.setTags(tags);
     }
 
     @ReactMethod
