@@ -12,14 +12,6 @@ export default function App() {
         title="Init"
         onPress={() => {
           bitlabs.init('', '', '');
-          bitlabs
-            .hasSurveys()
-            .then((value) => {
-              console.log('tem pesquisa ' + value);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
         }}
       />
     </View>

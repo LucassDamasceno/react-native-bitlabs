@@ -18,7 +18,7 @@ const Bitlabs = NativeModules.Bitlabs
     );
 
 function show(): void {
-  return Bitlabs.show();
+  return Bitlabs.showOfferWall();
 }
 function hasSurveys(): Promise<boolean> {
   return Bitlabs.hasSurveys();

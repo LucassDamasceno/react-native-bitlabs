@@ -13,7 +13,7 @@ import com.facebook.react.module.annotations.ReactModule;
 import java.util.HashMap;
 import java.util.Map;
 
-import ai.bitlabs.sdk.BitLabsSDK;
+import ai.bitlabs.sdk.BitLabs;
 
 
 @ReactModule(name = BitlabsModule.NAME)
@@ -32,21 +32,31 @@ public class BitlabsModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void initBitLabsSDK(String token, String userId, String playerId){
+      BitLabs BitLabsSDK = BitLabs.INSTANCE;
       Context context = getReactApplicationContext();
-      BitLabsSDK.Companion.init(context, token, userId);
+      BitLabsSDK.init(context, token, userId);
       Map<String, Object> tags = new HashMap<>();
       tags.put("playerId", playerId);
-      BitLabsSDK.Companion.setTags(tags);
+      BitLabsSDK.setTags(tags);
     }
 
     @ReactMethod
     public void show(){
+      BitLabs BitLabsSDK = BitLabs.INSTANCE;
       Context context = getReactApplicationContext();
-      BitLabsSDK.Companion.show(context);
+//      BitLabsSDK.show(context);
+    }
+
+    @ReactMethod
+    public void showOfferWall(){
+      BitLabs bitLabsSDK = BitLabs.INSTANCE;
+      Context context = getReactApplicationContext();
+      bitLabsSDK.launchOfferWall(context);
     }
 
     @ReactMethod
     public void hasSurveys(Promise promise){
-      BitLabsSDK.Companion.hasSurveys(promise::resolve, promise::reject);
+      BitLabs BitLabsSDK = BitLabs.INSTANCE;
+//      BitLabsSDK.(promise::resolve, promise::reject);
     }
 }

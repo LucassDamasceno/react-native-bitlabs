@@ -237,7 +237,7 @@ PODS:
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
   - React-jsinspector (0.63.4)
-  - react-native-bitlabs (0.1.0):
+  - react-native-bitlabs (0.1.1):
     - React-Core
   - React-RCTActionSheet (0.63.4):
     - React-Core/RCTActionSheetHeaders (= 0.63.4)
@@ -455,7 +455,7 @@ SPEC CHECKSUMS:
   React-jsi: a0418934cf48f25b485631deb27c64dc40fb4c31
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
-  react-native-bitlabs: a94e083bc763d005c09598146f6c9c5709242330
+  react-native-bitlabs: bae69ebcf146f41243b0bab7f3bd655413a571ec
   React-RCTActionSheet: 89a0ca9f4a06c1f93c26067af074ccdce0f40336
   React-RCTAnimation: 1bde3ecc0c104c55df246eda516e0deb03c4e49b
   React-RCTBlob: a97d378b527740cc667e03ebfa183a75231ab0f0
@@ -471,4 +471,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 018b78ed6a22302c8350b2be3ebcb01d7a91e6f7
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
